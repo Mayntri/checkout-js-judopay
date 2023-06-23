@@ -11,6 +11,7 @@ enum PaymentMethodType {
     PaypalCredit = 'paypal-credit',
     PaypalVenmo = 'paypal-venmo',
     VisaCheckout = 'visa-checkout',
+    Judopay = 'judopay',
 }
 
 export default PaymentMethodType;

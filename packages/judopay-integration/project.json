@@ -1,0 +1,22 @@
+{
+  "root": "packages/judopay-integration",
+  "sourceRoot": "packages/judopay-integration/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/judopay-integration/**/*.{js,ts,tsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/judopay-integration"],
+      "options": {
+        "jestConfig": "packages/judopay-integration/jest.config.js"
+      }
+    }
+  },
+  "tags": ["scope:integration"]
+}

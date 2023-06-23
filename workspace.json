@@ -26,6 +26,7 @@
     "test-framework": "packages/test-framework",
     "test-utils": "packages/test-utils",
     "ui": "packages/ui",
-    "workspace-tools": "packages/workspace-tools"
+    "workspace-tools": "packages/workspace-tools",
+    "judopay-integration": "packages/judopay-integration"
   }
 }

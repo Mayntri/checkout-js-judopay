@@ -65,6 +65,10 @@ function getPaymentMethodTitle(
                 logoUrl: cdnPath('/img/payment-providers/paypal_commerce_logo.svg'),
                 titleText: '',
             },
+            [PaymentMethodId.Judopay]: {
+                logoUrl: 'https://assets-global.website-files.com/5dcecea1792b9612feb80ba1/5ebc31f008c7b84f186ba160_judopay%20logo.png',
+                titleText: '',
+            },
             [PaymentMethodId.PaypalCommerceCredit]: {
                 logoUrl: cdnPath('/img/payment-providers/paypal_commerce_logo_letter.svg'),
                 titleText: methodDisplayName,

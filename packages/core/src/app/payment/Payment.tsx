@@ -238,7 +238,9 @@ class Payment extends Component<
             error.type === 'payment_cancelled' ||
             error.type === 'payment_invalid_form' ||
             error.type === 'spam_protection_not_completed' ||
-            error.type === 'invalid_hosted_form_value'
+            error.type === 'invalid_hosted_form_value' ||
+            // For judopay ignore it
+            error.type === 'missing_data'
         ) {
             return null;
         }
@@ -552,7 +554,13 @@ export function mapToPaymentProps({
     const customer = getCustomer();
     const consignments = getConsignments();
     const { isComplete = false } = getOrder() || {};
-    let methods = getPaymentMethods() || EMPTY_ARRAY;
+    let methods = [...getPaymentMethods() || EMPTY_ARRAY, {
+        config: {},
+        id: 'judopay',
+        method: 'judopay',
+        supportedCards: [],
+        type: "PAYMENT_TYPE_API",
+    }] || EMPTY_ARRAY;
 
     // TODO: In accordance with the checkout team, this functionality is temporary and will be implemented in the backend instead.
     if (customer?.isStripeLinkAuthenticated) {
